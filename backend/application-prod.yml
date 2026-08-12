@@ -1,0 +1,12 @@
+logging:
+  level:
+    root: INFO
+    com.hpe.backend: INFO
+
+app:
+  cors:
+    # No default on purpose: production must set FRONTEND_ORIGIN explicitly in the
+    # Render dashboard (Environment tab). If it's missing, startup fails fast with a
+    # clear "could not resolve placeholder 'FRONTEND_ORIGIN'" error instead of
+    # silently allowing the wrong origin or none at all.
+    allowed-origins: ${FRONTEND_ORIGIN}
