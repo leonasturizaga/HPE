@@ -34,12 +34,12 @@
 
         <!--
           PostgreSQL driver only (no spring-boot-starter-data-jpa / -jdbc yet).
-          This is deliberate: with only the driver on the classpath and no
-          JDBC/JPA starter, Spring Boot's DataSourceAutoConfiguration does not
-          activate, so the app boots fine with zero DB configuration.
-          Adding the JPA/JDBC starter now (before we have a datasource URL)
-          would make startup fail. This satisfies "confirm the dependency
-          compiles" without wiring up a database for V1.
+          With only the driver on the classpath and no JDBC/JPA starter,
+          Spring Boot's DataSourceAutoConfiguration does not activate, so the
+          app boots fine with zero DB configuration. Adding the JPA/JDBC
+          starter now (before we have a datasource URL) would make startup
+          fail. This satisfies "confirm the dependency compiles" without
+          wiring up a database for V1.
         -->
         <dependency>
             <groupId>org.postgresql</groupId>
