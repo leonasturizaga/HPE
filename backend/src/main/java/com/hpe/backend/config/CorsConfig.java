@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * CORS is restricted to the frontend origin(s) configured via
  * app.cors.allowed-origins, which is backed by the FRONTEND_ORIGIN
- * environment variable (see application.yml). This lets us point at
+ * environment variable (see application.properties). This lets us point at
  * localhost in dev and the real Vercel URL in production without any
  * code change — just an env var update per environment.
  *

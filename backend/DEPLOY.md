@@ -17,20 +17,21 @@ frontend) and push.
      otherwise use the **Build/Start command** fields below with **Java** runtime.
    - **Build Command**:
      ```
-     ./mvnw clean package -DskipTests
+     mvn clean package -DskipTests
      ```
-     (or `mvn clean package -DskipTests` if you don't commit the Maven wrapper)
    - **Start Command**:
      ```
      java -jar target/backend.jar
      ```
+     (the jar name is pinned in `pom.xml` via `<finalName>backend</finalName>`,
+     so this path won't shift with the version number)
 4. **Environment** tab → add these variables:
    | Key | Value |
    |---|---|
    | `SPRING_PROFILES_ACTIVE` | `prod` |
    | `FRONTEND_ORIGIN` | your Vercel URL, e.g. `https://your-app.vercel.app` |
 
-   Render sets `PORT` automatically — don't add it yourself, `application.yml`
+   Render sets `PORT` automatically — don't add it yourself, `application.properties`
    already reads it (`${PORT:8080}`).
 5. Instance type: **Free**
 6. Create Web Service and wait for the build/deploy to finish.
